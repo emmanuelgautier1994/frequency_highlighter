@@ -21,7 +21,23 @@
     <div style="text-align:center">
       <br />
       <p>Le texte votre email :</p>
-      <textarea id="input" style="width:80%; height:100px"></textarea><br /> <br />
+
+      <textarea id="input" style="width:80%; height:250px">
+Hello à tous,
+
+Cette semaine pour notre projet :
+[P] {outil v3}Nouvelles features sur un outil
+[P] Début de construction du back de Stalactite : point d'entrée Nginx, base de données Elasticsearch {un livrable}
+[U] Ateliers retours utilisateurs sur Stalactite
+
+La semaine prochaine : 
+- Encore du back
+- Encore des fonctionnalités (le tagging notamment)
+- Encore des tests utilisateurs
+
+À la semaine prochaine !
+      </textarea><br /> <br />
+
       <p>Votre projet :
         <select id="project">
           <option value="Archifiltre">Archifiltre</option>
@@ -40,7 +56,7 @@
         </select>
       </p>
       <button onclick="generate()" style="width:30%; height:50px; font-size: 1.5em;">Générer le code markdown</button><br /><br />
-      <textarea id="output" style="width:80%; height:200px"></textarea>
+      <textarea id="output" style="width:80%; height:300px"></textarea>
     </div>
 
   </body>
