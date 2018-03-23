@@ -1,6 +1,7 @@
 "use strict";
 
-function generate(project_name){
+function generate(){
+	let project_name = document.getElementById('project').value
 	document.getElementById('output').value = ''
     let request = new XMLHttpRequest();
     request.open('GET', "https://raw.githubusercontent.com/entrepreneur-interet-general/eig-link/master/suivi.org", true);

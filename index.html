@@ -19,8 +19,27 @@
   <body>
 
     <div style="text-align:center">
-      <textarea id="input" style="width:80%; height:200px"></textarea>
-      <button onclick="generate('Archifiltre')">Générer</button><br /><br />
+      <br />
+      <p>Le texte votre email :</p>
+      <textarea id="input" style="width:80%; height:100px"></textarea><br /> <br />
+      <p>Votre projet :
+        <select id="project">
+          <option value="Archifiltre">Archifiltre</option>
+          <option value="b@liseNAV">b@liseNAV</option>
+          <option value="BrigadeNumérique">BrigadeNumérique</option>
+          <option value="CoachÉlève">CoachÉlève</option>
+          <option value="DataESR">DataESR</option>
+          <option value="EIG Node">EIG Node</option>
+          <option value="EIG Link">EIG Link</option>
+          <option value="Gobelins">Gobelins</option>
+          <option value="Hopkins">Hopkins</option>
+          <option value="Lab Santé">Lab Santé</option>
+          <option value="Prédisauvetage">Prédisauvetage</option>
+          <option value="Prévisecours">Prévisecours</option>
+          <option value="Signaux Faibles">Signaux Faibles</option>
+        </select>
+      </p>
+      <button onclick="generate()" style="width:30%; height:50px; font-size: 1.5em;">Générer le code markdown</button><br /><br />
       <textarea id="output" style="width:80%; height:200px"></textarea>
     </div>
 
