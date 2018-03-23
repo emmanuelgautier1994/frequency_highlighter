@@ -45,12 +45,6 @@ function getNewsCode(news, project_name,dims){
 		res += getNewsLine(news[i].livrable, news[i].action, news[i].cat, project_name, date, dims)
 		res += "\n"
 	}
-	// let j = 0
-	// while (j<news.length){
-	// 	res += getNewsLine(news[j].livrable, news[j].action, news[j].cat, project_name, date, dims)
-	// 	res += "\n"
-	// 	j++
-	// }
 
 	return res
 }
@@ -81,7 +75,7 @@ function getNews(input){
 			res.push({
     			cat:string.match(/(?<=\[).*(?=\])/)[0],
     			livrable:(/\{.*\}/.test(string) ? string.match(/(?<=\{).*(?=\})/)[0] : ''),
-    			action:string.replace(/(\{.*\}|\[.*\])/g, "")
+    			action:string.replace(/(\{.*\}|\[.*\])/g, "").replace(/( )*(-|\*)( )*/,"")
 			})
     	}
 	}
