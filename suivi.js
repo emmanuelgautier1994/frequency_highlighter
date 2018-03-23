@@ -137,7 +137,7 @@ function getSuite(input){
 	    		end = true
 	    	}
 	    	else{
-	    		res += "* " + string.replace(/( )*(-|\*)( )*/,"") + "\n"
+	    		res += "- " + string.replace(/( )*(-|\*)( )*/,"") + "\n"
 	    	}
 	    }
 	    else{
