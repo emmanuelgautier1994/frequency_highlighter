@@ -55,7 +55,7 @@ function getNews(input){
     let string = ""
 
     for (let i = 0; i < lines.length; i++) {
-	string = lines[i]
+	string = lines[i].replace(/^[\s-\*]*/,"")
 	if(scanning){
 	    if (!(/\[.*\]/.test(string))){
 	    	scanning = false
@@ -69,11 +69,10 @@ function getNews(input){
 	}
 
 	if(scanning){
-	    console.log(string)
 	    res.push({
     		cat:string.match(/\[(.*)\]/)[1],
     		livrable:(/\{.*\}/.test(string) ? string.match(/\{(.*)\}/)[1] : ''),
-    		action:string.replace(/(\{.*\}|\[.*\])/g, "").replace(/( )*(-|\*)( )*/,"")
+    		action:string.replace(/\s*(\{.*\}|\[.*\])\s*/g, "")
 	    })
     	}
     }
@@ -125,17 +124,22 @@ function getSuite(input){
     let lines = input.split('\n')
     let scanning = false
     let end = false
+    let at_least_one_item_scanned = false
     let string = ""
 
     for (let i = 0; i < lines.length; i++) {
-	string = lines[i]
+	string = lines[i].replace(/^[\s-\*]*/,"")
+	console.log(string)
 	if(scanning){
 	    if (string == ""){
-	    	scanning = false
-	    	end = true
+	    	if(at_least_one_item_scanned){
+	    		scanning = false
+	    		end = true
+	    	}
 	    }
 	    else{
-	    	res += "- " + string.replace(/( )*(-|\*)( )*/,"") + "\n"
+	    	res += "- " + string + "\n"
+	    	at_least_one_item_scanned = true
 	    }
 	}
 	else{
