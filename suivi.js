@@ -71,8 +71,8 @@ function getNews(input){
 	if(scanning){
 	    console.log(string)
 	    res.push({
-    		cat:string.match(/(?<=\[).*(?=\])/)[0],
-    		livrable:(/\{.*\}/.test(string) ? string.match(/(?<=\{).*(?=\})/)[0] : ''),
+    		cat:string.match(/\[(.*)\]/)[1],
+    		livrable:(/\{.*\}/.test(string) ? string.match(/\{(.*)\}/)[1] : ''),
     		action:string.replace(/(\{.*\}|\[.*\])/g, "").replace(/( )*(-|\*)( )*/,"")
 	    })
     	}
