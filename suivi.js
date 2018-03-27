@@ -72,7 +72,7 @@ function getNews(input){
 	    res.push({
     		cat:string.match(/\[(.*)\]/)[1],
     		livrable:(/\{.*\}/.test(string) ? string.match(/\{(.*)\}/)[1] : ''),
-    		action:string.replace(/\s*(\{.*\}|\[.*\])\s*/g, "")
+    		action:string.replace(/\s*(\{.*\}|\[.*\])\s*/g, "").replace(/^\s*:\s*/,"")
 	    })
     	}
     }
@@ -129,7 +129,6 @@ function getSuite(input){
 
     for (let i = 0; i < lines.length; i++) {
 	string = lines[i].replace(/^[\s-\*]*/,"")
-	console.log(string)
 	if(scanning){
 	    if (string == ""){
 	    	if(at_least_one_item_scanned){
@@ -143,13 +142,12 @@ function getSuite(input){
 	    }
 	}
 	else{
-	    if (!end && /prochaine/.test(string)){
+	    if (!end && /(semaine prochaine|semaine suivante)/i.test(string)){
 	    	scanning = true
 	    }
 	}
     }
 
-    console.log(res)
     return res
 }
 
