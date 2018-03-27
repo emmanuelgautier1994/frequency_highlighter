@@ -143,7 +143,7 @@ function getSuite(input){
 	    }
 	}
 	else{
-	    if (!end && /prochaine/.test(string)){
+	    if (!end && /semaine/i.test(string)  && /(prochaine|suivante)/i.test(string)){
 	    	scanning = true
 	    }
 	}
