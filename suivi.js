@@ -129,7 +129,6 @@ function getSuite(input){
 
     for (let i = 0; i < lines.length; i++) {
 	string = lines[i].replace(/^[\s-\*]*/,"")
-	console.log(string)
 	if(scanning){
 	    if (string == ""){
 	    	if(at_least_one_item_scanned){
@@ -143,13 +142,12 @@ function getSuite(input){
 	    }
 	}
 	else{
-	    if (!end && /semaine/i.test(string)  && /(prochaine|suivante)/i.test(string)){
+	    if (!end && /(semaine prochaine|semaine suivante)/i.test(string)){
 	    	scanning = true
 	    }
 	}
     }
 
-    console.log(res)
     return res
 }
 
