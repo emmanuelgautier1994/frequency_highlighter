@@ -7,50 +7,24 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <script defer type="text/javascript" src="suivi.js"></script>
+    <script defer type="text/javascript" src="analysis.js"></script>
   </head>
   <body>
 
     <div style="text-align:center">
       <br />
-      <p>Le texte votre email :</p>
-      <textarea id="input" style="width:80%; height:250px">
-	Hello à tous,
+      <p>Le texte à analyser :</p>
+<textarea id="input" style="width:80%; height:150px">
+The String that replaces the substring specified by the specified regexp or substr parameter.
+A number of special replacement patterns are supported; see the "Specifying a string as a parameter" section below.
+</textarea><br /> <br />
 
-	Cette semaine pour notre projet :
-	
-	[P] {outil v3} Nouvelles features sur un outil
-	[P] Début de construction du back de Stalactite {un livrable}
-	[U] Ateliers retours utilisateurs sur Stalactite
+<p>Les mots à exclure :</p>
+<textarea id="exclude" style="width:80%; height:50px">
+Je tu il nous vous ils le la les un une des qui que à de a du on en pas au et ne pour dans avec sans sous sur plus quand mais où donc or ni car suis es est sommes êtes sont ai as a avons avez ont
+</textarea><br /> <br />
 
-	La semaine prochaine :
-	
-	- Encore du back
-	- Encore des fonctionnalités (le tagging notamment)
-	- Encore des tests utilisateurs
-
-	À la semaine prochaine !
-      </textarea><br /> <br />
-
-      <p>Votre projet :
-        <select id="project">
-          <option value="Archifiltre">Archifiltre</option>
-          <option value="b@liseNAV">b@liseNAV</option>
-          <option value="BrigadeNumérique">BrigadeNumérique</option>
-          <option value="CoachÉlève">CoachÉlève</option>
-          <option value="DataESR">DataESR</option>
-          <option value="EIG Node">EIG Node</option>
-          <option value="EIG Link">EIG Link</option>
-          <option value="Gobelins">Gobelins</option>
-          <option value="Hopkins">Hopkins</option>
-          <option value="Lab Santé">Lab Santé</option>
-          <option value="Prédisauvetage">Prédisauvetage</option>
-          <option value="Prévisecours">Prévisecours</option>
-          <option value="SocialConnect">SocialConnect</option>
-          <option value="Signaux Faibles">Signaux Faibles</option>
-        </select>
-      </p>
-      <button onclick="generate()" style="width:30%; height:50px; font-size: 1.5em;">Générer la mise en forme pour Github</button><br /><br />
+      <button onclick="generate()" style="width:30%; height:50px; font-size: 1.5em;">Décorer votre texte</button><br /><br />
       <textarea id="output" style="width:80%; height:300px"></textarea>
     </div>
 
